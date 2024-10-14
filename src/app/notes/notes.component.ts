@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Note, NoteInfo, NotesService } from '../notes.service';
 import { BehaviorSubject } from 'rxjs';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators , ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './notes.component.html',
   styleUrl: './notes.component.css'
 })
@@ -29,7 +30,7 @@ export class NotesComponent {
   }
 
 
-  onSelectNode ( id: number)
+  onSelectNote ( id: number)
   {
     this.currentNote = this.notesModel.getNote(id);
   }

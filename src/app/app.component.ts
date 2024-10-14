@@ -1,26 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { NotesComponent } from './notes/notes.component';
 
 
 @Component({
   selector: 'app-root',
+  standalone : true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  imports : [NotesComponent]
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public title = 'Angular Notes';
-
-
   constructor() {}
-
-  async ngOnInit() {
-
-  }
-
-  async login() {
-
-  }
-
-  async logout() {
-
-  }
 }
