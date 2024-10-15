@@ -12,9 +12,9 @@
     {{currentNote.text}}
   </p>
   <div>
-    <button color="primary" (click)="onEditNote()" *ngIf="noteSelected()">Edit</button>
-    <button color="warn" (click)="onDeleteNote()" *ngIf="noteSelected()">Delete</button>
-    <button color="primary" (click)="onNewNote()">New Note</button>
+    <button class="btn btn-primary" (click)="onEditNote()" *ngIf="noteSelected()">Edit</button>
+    <button class="btn btn-primary" (click)="onDeleteNote()" *ngIf="noteSelected()">Delete</button>
+    <button type="button" class="btn btn-primary btn-lg active" (click)="onNewNote()">New Note</button>
   </div>
 </div>
 
@@ -25,7 +25,7 @@
     <div class="form-group">  
       <input placeholder="Title" formControlName="title">    
       <textarea matInput placeholder="Note text" formControlName="text"></textarea>    
-    <button class="btn btn-primary" color="primary">Update</button>
+    <button class="btn btn-primary">Update</button>
   </div>
   </form>
 </div>

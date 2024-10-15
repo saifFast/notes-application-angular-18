@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './notes.component.html',
-  styleUrl: './notes.component.css'
+  styles: ["notes.component.css", 'node_modules/bootstrap/dist/css/bootstrap.min.css'],
 })
 export class NotesComponent {
   notes = new BehaviorSubject<NoteInfo[]>([]);
