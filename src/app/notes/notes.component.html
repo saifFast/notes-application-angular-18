@@ -1,34 +1,39 @@
-<div *ngIf="true">
-  <li *ngFor="let note of (notes | async); index as i; first as isFirst">
+<h3>Notes List</h3>
+<div class="main-background" *ngIf="true">
+  <ul class="list-group">
+  <li class="list-group-item" *ngFor="let note of (notes | async); index as i; first as isFirst">
     <a (click)="onSelectNote(note.id)">
-      {{note.title}}
+      {{note.id}} {{note.title}}
     </a>
   </li>
-  <div>
+</ul>
+<div>
 
 <div *ngIf="!editNote">
   <h3>{{currentNote.title}}</h3>
   <p>
     {{currentNote.text}}
   </p>
-  <div>
-    <button class="btn btn-primary" (click)="onEditNote()" *ngIf="noteSelected()">Edit</button>
-    <button class="btn btn-primary" (click)="onDeleteNote()" *ngIf="noteSelected()">Delete</button>
-    <button type="button" class="btn btn-primary btn-lg active" (click)="onNewNote()">New Note</button>
+  <div class="container">
+    <div class="d-flex justify-content-start">
+      <button type="button" class="btn btn-primary me-2" (click)="onNewNote()">New Note</button>  
+      <button type="button" class="btn btn-danger me-2" (click)="onDeleteNote()" *ngIf="noteSelected()">Delete</button>
+      <button type="button" class="btn btn-success" (click)="onEditNote()" *ngIf="noteSelected()">Edit</button>
+  </div>
   </div>
 </div>
-
-<p>Saif</p>
 
 <div *ngIf="editNote">
   <form [formGroup]="editNoteForm" (ngSubmit)="updateNote()">  
-    <div class="form-group">  
-      <input placeholder="Title" formControlName="title">    
-      <textarea matInput placeholder="Note text" formControlName="text"></textarea>    
-    <button class="btn btn-primary">Update</button>
+    <div class="form-group"> 
+      <div class="container"> 
+        <div class="d-flex justify-content-start">        
+        <input placeholder="Title" formControlName="title">    
+        <textarea matInput placeholder="Note text" formControlName="text"></textarea>    
+        <button class="btn btn-primary">Update</button>
+      </div>
+    </div>
   </div>
   </form>
 </div>
-
-
-  
+</div>
