@@ -22,6 +22,8 @@ const routes: Routes = [
   { path: 'notes', component: NotesComponent}
 ];
 
+
+
 @NgModule({
   imports: 
   [NotesComponent,

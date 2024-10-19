@@ -3,9 +3,8 @@
   <ul class="list-group">
   <li class="list-group-item" *ngFor="let note of (notes | async); index as i; first as isFirst">
     <a (click)="onSelectNote(note.id)">
-      {{note.id}} 
-    </a>
-    <p>{{note.title}}</p>
+      {{note.title}}
+    </a>    
   </li>
 </ul>
 <div>
