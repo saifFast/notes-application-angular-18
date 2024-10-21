@@ -15,23 +15,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
-
-
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'notes', component: NotesComponent}
-];
+import { AboutComponent } from './about/about.component';
 
 
 
 @NgModule({
   imports: 
   [NotesComponent,
-    CommonModule,
-      RouterModule.forRoot(routes),
+    CommonModule,      
     BrowserModule,
-    BrowserAnimationsModule,
-   
+    BrowserAnimationsModule,   
     FormsModule,
     ReactiveFormsModule,
     MatToolbarModule,
